@@ -1,0 +1,302 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Good Dog Rocky — Natural pet food, supplies, grooming & self-service dog wash in Ashburn, VA" } = Astro.props;
+const base = import.meta.env.BASE_URL;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href={base} class="logo">
+          <img src={`${base}images/logo.png`} alt="Good Dog Rocky" class="logo-img" />
+        </a>
+        <button class="mobile-toggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul>
+          <li><a href={base}>Home</a></li>
+          <li><a href={`${base}services/`}>Services</a></li>
+          <li><a href={`${base}about/`}>About</a></li>
+          <li><a href={`${base}contact/`}>Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <img src={`${base}images/logo-icon.png`} alt="Good Dog Rocky" class="footer-logo" />
+          <p>A Healthier Lifestyle for Pets</p>
+        </div>
+        <div class="footer-section">
+          <h3>Location</h3>
+          <p>22895 Brambleton Plaza, Suite 103<br />Ashburn, VA 20148</p>
+        </div>
+        <div class="footer-section">
+          <h3>Contact</h3>
+          <p>
+            <a href="tel:+17033279600" class="icon-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              (703) 327-9600
+            </a>
+          </p>
+          <p>
+            <a href="https://www.instagram.com/gooddogrocky/" target="_blank" rel="noopener noreferrer" class="icon-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+              @gooddogrocky
+            </a>
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; {new Date().getFullYear()} Good Dog Rocky. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      const toggle = document.querySelector('.mobile-toggle');
+      const nav = document.querySelector('nav ul');
+      toggle?.addEventListener('click', () => {
+        nav?.classList.toggle('open');
+      });
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :root {
+    --brown-dark: #3E2723;
+    --brown: #5D4037;
+    --brown-medium: #8D6E63;
+    --brown-light: #C4A882;
+    --tan: #D2B48C;
+    --cream: #FAF6F1;
+    --cream-dark: #EDE4D8;
+    --white: #FFFFFF;
+    --text: #3E2723;
+    --text-light: #5D4037;
+  }
+
+  body {
+    font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+    background: var(--white);
+  }
+
+  header {
+    background: var(--brown-dark);
+    padding: 0.75rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  }
+
+  nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  nav .logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo-img {
+    height: 32px;
+    width: auto;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+  }
+
+  nav ul a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.05rem;
+    transition: color 0.2s;
+  }
+
+  nav ul a:hover {
+    color: var(--brown-light);
+  }
+
+  .mobile-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+  }
+
+  .mobile-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: var(--white);
+    border-radius: 2px;
+  }
+
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    min-height: 60vh;
+  }
+
+  footer {
+    background: var(--brown-dark);
+    color: var(--cream);
+    padding: 2.5rem 2rem;
+    margin-top: 3rem;
+  }
+
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  .footer-section {
+    flex: 1;
+    min-width: 200px;
+  }
+
+  .footer-logo {
+    height: 36px;
+    width: auto;
+    margin-bottom: 0.5rem;
+  }
+
+  .icon-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--brown-light);
+    text-decoration: none;
+  }
+
+  .icon-link:hover {
+    text-decoration: underline;
+  }
+
+  .icon-link svg {
+    flex-shrink: 0;
+  }
+
+  .footer-section h3 {
+    color: var(--white);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+  }
+
+  .footer-section a {
+    color: var(--brown-light);
+    text-decoration: none;
+  }
+
+  .footer-section a:hover {
+    text-decoration: underline;
+  }
+
+  .footer-bottom {
+    max-width: 1200px;
+    margin: 1.5rem auto 0;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--brown-dark);
+  }
+
+  h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.75rem;
+    color: var(--brown);
+  }
+
+  a {
+    color: var(--brown);
+  }
+
+  @media (max-width: 768px) {
+    header {
+      padding: 0.75rem 1rem;
+    }
+
+    .mobile-toggle {
+      display: flex;
+    }
+
+    nav ul {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      background: var(--brown-dark);
+      padding: 1rem 2rem;
+      gap: 1rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    nav ul.open {
+      display: flex;
+    }
+
+    main {
+      padding: 1.5rem 1rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+    }
+  }
+</style>

@@ -1,0 +1,125 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Contact — Good Dog Rocky">
+  <h1>Contact Us</h1>
+
+  <section class="contact-info">
+    <div class="contact-card">
+      <h2>Visit Our Shop</h2>
+      <p>
+        22895 Brambleton Plaza, Suite 103<br />
+        Ashburn, VA 20148
+      </p>
+    </div>
+
+    <div class="contact-card">
+      <h2>Call Us</h2>
+      <p class="phone">
+        <a href="tel:+17033279600">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          (703) 327-9600
+        </a>
+      </p>
+      <p>Give us a call to schedule grooming appointments or ask about our products.</p>
+    </div>
+
+    <div class="contact-card">
+      <h2>Follow Us</h2>
+      <p>
+        <a href="https://www.instagram.com/gooddogrocky/" target="_blank" rel="noopener noreferrer" class="instagram-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+          @gooddogrocky
+        </a>
+      </p>
+      <p>Follow us for photos of adorable visitors, grooming transformations, new products, and special promotions!</p>
+    </div>
+  </section>
+
+  <section class="map-section">
+    <h2>Find Us on the Map</h2>
+    <div class="map-embed">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3106.5!2d-77.5233!3d38.9978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b63e1c1c4e5c1f%3A0x1234567890abcdef!2s22895+Brambleton+Plaza+%23103%2C+Ashburn%2C+VA+20148!5e0!3m2!1sen!2sus!4v1"
+        width="100%"
+        height="400"
+        style="border:0; border-radius: 12px;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Good Dog Rocky location — 22895 Brambleton Plaza, Suite 103, Ashburn, VA 20148"
+      ></iframe>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+
+  .contact-card {
+    background: var(--cream);
+    border: 1px solid var(--cream-dark);
+    border-radius: 12px;
+    padding: 1.5rem;
+  }
+
+  .contact-card h2 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .contact-card p {
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+  }
+
+  .phone a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--brown);
+    text-decoration: none;
+  }
+
+  .phone a:hover {
+    text-decoration: underline;
+  }
+
+  .phone svg {
+    flex-shrink: 0;
+  }
+
+  .instagram-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--brown);
+    text-decoration: none;
+  }
+
+  .instagram-link:hover {
+    text-decoration: underline;
+  }
+
+  .map-section {
+    margin-top: 2rem;
+  }
+
+  .map-embed {
+    margin-top: 1rem;
+  }
+</style>

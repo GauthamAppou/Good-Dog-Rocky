@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm create:*)",
+      "Bash(export PATH=\"$PATH:/c/Program Files/nodejs:/c/Users/gauth/AppData/Roaming/npm\")",
+      "Bash(npm --version)",
+      "Bash(cmd.exe /c \"where npm\")",
+      "Bash(cmd.exe /c \"where node\")",
+      "Bash(cmd.exe /c \"npm --version\")",
+      "Read(//c/Program Files/**)",
+      "Read(//c/Program Files \\(x86\\)/**)",
+      "Read(//c/Users/gauth/AppData/Roaming/**)",
+      "Read(//c/Users/gauth/AppData/Local/**)",
+      "Read(//c/Users/gauth/**)",
+      "Read(//c/Users/gauth/scoop/apps/**)",
+      "Bash(cmd.exe /c \"node --version\")",
+      "Bash(export PATH=\"$PATH:/c/Program Files/nodejs\")",
+      "Bash(npm install:*)",
+      "Bash(npm run:*)",
+      "Bash(cp \"/c/Users/gauth/Downloads/good-dog-rocky-logo.png\" \"C:/Users/gauth/Downloads/Claude Code GDR Website/public/images/logo.png\")",
+      "Bash(cp \"/c/Users/gauth/Downloads/good-dog-rocky-trimmed-logo.png\" \"C:/Users/gauth/Downloads/Claude Code GDR Website/public/images/logo-icon.png\")",
+      "Bash(cp \"/c/Users/gauth/Downloads/erik-witsoe-ShMnUeqSklg-unsplash.jpg\" \"C:/Users/gauth/Downloads/Claude Code GDR Website/public/images/cat-shop.jpg\")",
+      "Bash(cp \"/c/Users/gauth/Downloads/benjamin-lehman-qwIeh5M8bF8-unsplash.jpg\" \"C:/Users/gauth/Downloads/Claude Code GDR Website/public/images/dog-wash.jpg\")",
+      "Bash(cp \"/c/Users/gauth/Downloads/essential-dog-grooming-habits-to-keep-your-pup-happy-and-healthy.png\" \"C:/Users/gauth/Downloads/Claude Code GDR Website/public/images/dog-grooming.png\")",
+      "Bash(ls -lt /c/Users/gauth/Downloads/*.png)",
+      "Bash(cp \"/c/Users/gauth/Downloads/good-dog-rocky-logo-removebg-preview.png\" \"C:/Users/gauth/Downloads/Claude Code GDR Website/public/images/logo.png\")",
+      "Bash(cp \"/c/Users/gauth/Downloads/good-dog-rocky-trimmed-logo-removebg-preview.png\" \"C:/Users/gauth/Downloads/Claude Code GDR Website/public/images/logo-icon.png\")"
+    ]
+  }
+}

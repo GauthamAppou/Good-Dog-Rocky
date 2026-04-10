@@ -1,0 +1,441 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout title="Good Dog Rocky — Pet Shop & Grooming in Ashburn, VA">
+  <!-- Hero -->
+  <section class="hero">
+    <img src={`${base}images/dogs-running.jpg`} alt="Happy dogs running" class="hero-img" />
+    <div class="hero-overlay">
+      <h1>Welcome to Good Dog Rocky</h1>
+      <p class="tagline">A Healthier Lifestyle for Pets</p>
+      <p class="subtitle">Natural pet food, supplies, professional grooming & self-service dog wash in Ashburn, VA</p>
+      <div class="hero-actions">
+        <a href={`${base}services/`} class="btn btn-primary">Our Services</a>
+        <a href={`${base}contact/`} class="btn btn-secondary">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro -->
+  <section class="intro">
+    <p>
+      At Good Dog Rocky, we believe every pet deserves the best. Located in the heart of
+      Brambleton Plaza in Ashburn, Virginia, we're your go-to destination for premium natural
+      pet food, quality supplies, expert grooming services, and a convenient self-service dog wash.
+    </p>
+  </section>
+
+  <!-- Services Highlights -->
+  <section class="highlights">
+    <div class="card">
+      <img src={`${base}images/cat-shop.jpg`} alt="Pet supplies" class="card-img" />
+      <div class="card-body">
+        <h2>Natural Pet Food & Supplies</h2>
+        <p>
+          We carry a carefully curated selection of natural, wholesome pet food brands and
+          quality supplies. Our knowledgeable staff can help you find the perfect fit for
+          your furry friend.
+        </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src={`${base}images/dog-grooming.png`} alt="Dog grooming" class="card-img" />
+      <div class="card-body">
+        <h2>Professional Grooming</h2>
+        <p>
+          Our experienced groomers provide top-notch services tailored to your pet's
+          breed and needs. From full grooming packages to simple baths and nail trims.
+        </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src={`${base}images/dog-wash.jpg`} alt="Dog getting a bath" class="card-img" />
+      <div class="card-body">
+        <h2>Self-Service Dog Wash</h2>
+        <p>
+          Our self-service dog wash stations have everything you need — professional-grade
+          tubs, shampoo, conditioner, towels, and dryers. All the mess stays here!
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="reviews-section">
+    <h2>What Our Customers Say</h2>
+    <div class="reviews-carousel" id="reviewsCarousel">
+      <div class="review-track">
+        <div class="review-card">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="review-text">
+            "Very helpful dog loving owners. Their service is friendly and prompt and they care
+            to make sure they deliver for you, the customer. They go the extra mile. We had our
+            dog washed and groomed there and he has never smelled so good and for so long! They
+            are also quick. I dropped our dog off and one hour later he was ready, cleaned, and furminated!"
+          </p>
+          <p class="reviewer">— Chris H.</p>
+        </div>
+
+        <div class="review-card">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="review-text">
+            "No other groomers in the past nine years have paid so much attention to details as the
+            groomers here have. We have four dogs that we take monthly to Good Dog Rocky."
+          </p>
+          <p class="reviewer">— Amanda Y.</p>
+        </div>
+
+        <div class="review-card">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="review-text">
+            "An amazing dog store with an incredible staff, very friendly and welcoming!! You can tell
+            they genuinely care about dogs. All of their products are top notch & a great variety of
+            dog foods/treats. 5 stars!!"
+          </p>
+          <p class="reviewer">— Joseph C.</p>
+        </div>
+
+        <div class="review-card">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="review-text">
+            "My dogs have been going to Good Dog Rocky for two years and trust me when I say this is
+            the best place to get your dogs groomed. The staff treats my dogs so well, and they always
+            come back so happy. Cindy at the front desk has always provided us with great service.
+            If you need a good place to get your dogs groomed, this is the place to do it!"
+          </p>
+          <p class="reviewer">— Neha R.</p>
+        </div>
+      </div>
+      <div class="carousel-controls">
+        <button class="carousel-btn prev" aria-label="Previous review">&larr;</button>
+        <div class="carousel-dots">
+          <button class="dot active" data-index="0" aria-label="Review 1"></button>
+          <button class="dot" data-index="1" aria-label="Review 2"></button>
+          <button class="dot" data-index="2" aria-label="Review 3"></button>
+          <button class="dot" data-index="3" aria-label="Review 4"></button>
+        </div>
+        <button class="carousel-btn next" aria-label="Next review">&rarr;</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Visit CTA -->
+  <section class="visit-us">
+    <img src={`${base}images/happy-dog.jpg`} alt="Happy dog" class="visit-img" />
+    <div class="visit-text">
+      <h2>Come Visit Us!</h2>
+      <p><strong>Address:</strong> 22895 Brambleton Plaza, Suite 103, Ashburn, VA 20148</p>
+      <p><strong>Phone:</strong> <a href="tel:+17033279600">(703) 327-9600</a></p>
+      <p>
+        We love meeting new friends — both two-legged and four-legged! Follow us on
+        <a href="https://www.instagram.com/gooddogrocky/" target="_blank" rel="noopener noreferrer">Instagram @gooddogrocky</a>
+        for adorable pet photos and updates.
+      </p>
+      <a href={`${base}contact/`} class="btn btn-primary">Get Directions</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .hero {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 3rem;
+  }
+
+  .hero-img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(62,39,35,0.88) 0%, rgba(62,39,35,0.35) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3rem;
+    color: white;
+  }
+
+  .hero-overlay h1 {
+    color: white;
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .tagline {
+    font-size: 1.4rem;
+    color: var(--brown-light);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+    color: var(--cream);
+    margin-bottom: 1.5rem;
+    max-width: 550px;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.75rem 1.75rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: opacity 0.2s;
+  }
+
+  .btn:hover { opacity: 0.9; }
+
+  .btn-primary {
+    background: var(--tan);
+    color: var(--brown-dark);
+    font-weight: 700;
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+  }
+
+  /* Intro */
+  .intro {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    text-align: center;
+    font-size: 1.15rem;
+    color: var(--text-light);
+  }
+
+  /* Highlights */
+  .highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .card {
+    display: flex;
+    background: var(--cream);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--cream-dark);
+  }
+
+  .card:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+
+  .card-img {
+    width: 40%;
+    object-fit: cover;
+    min-height: 250px;
+  }
+
+  .card-body {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+  }
+
+  .card-body h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .card-body p {
+    color: var(--text-light);
+    font-size: 1.05rem;
+  }
+
+  /* Reviews */
+  .reviews-section {
+    background: var(--cream-dark);
+    border-radius: 12px;
+    padding: 3rem 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  .reviews-section > h2 {
+    margin-bottom: 2rem;
+  }
+
+  .reviews-carousel {
+    max-width: 700px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .review-track {
+    display: flex;
+    transition: transform 0.4s ease;
+  }
+
+  .review-card {
+    min-width: 100%;
+    padding: 0 1rem;
+  }
+
+  .stars {
+    color: #D4A017;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .review-text {
+    font-size: 1.05rem;
+    color: var(--text-light);
+    font-style: italic;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  .reviewer {
+    font-weight: 600;
+    color: var(--brown);
+  }
+
+  .carousel-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .carousel-btn {
+    background: var(--brown);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .carousel-btn:hover {
+    background: var(--brown-dark);
+  }
+
+  .carousel-dots {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid var(--brown);
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.2s;
+  }
+
+  .dot.active {
+    background: var(--brown);
+  }
+
+  /* Visit CTA */
+  .visit-us {
+    display: flex;
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--cream);
+    border: 1px solid var(--cream-dark);
+  }
+
+  .visit-img {
+    width: 40%;
+    object-fit: cover;
+    min-height: 300px;
+  }
+
+  .visit-text {
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+    flex: 1;
+  }
+
+  .visit-text .btn {
+    align-self: flex-start;
+    margin-top: 0.75rem;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero-img { height: 300px; }
+    .hero-overlay { padding: 1.5rem; }
+    .hero-overlay h1 { font-size: 2rem; }
+
+    .card, .card:nth-child(even) {
+      flex-direction: column;
+    }
+
+    .card-img {
+      width: 100%;
+      height: 200px;
+      min-height: auto;
+    }
+
+    .visit-us {
+      flex-direction: column;
+    }
+
+    .visit-img {
+      width: 100%;
+      height: 200px;
+      min-height: auto;
+    }
+  }
+</style>
+
+<script>
+  let current = 0;
+  const track = document.querySelector('.review-track') as HTMLElement;
+  const dots = document.querySelectorAll('.dot');
+  const total = dots.length;
+
+  function goTo(index: number) {
+    current = ((index % total) + total) % total;
+    track.style.transform = `translateX(-${current * 100}%)`;
+    dots.forEach((d, i) => d.classList.toggle('active', i === current));
+  }
+
+  document.querySelector('.next')?.addEventListener('click', () => goTo(current + 1));
+  document.querySelector('.prev')?.addEventListener('click', () => goTo(current - 1));
+  dots.forEach(d => d.addEventListener('click', () => goTo(Number((d as HTMLElement).dataset.index))));
+
+  // Auto-advance every 6 seconds
+  setInterval(() => goTo(current + 1), 6000);
+</script>

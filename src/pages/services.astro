@@ -1,0 +1,142 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout title="Services — Good Dog Rocky">
+  <h1>Our Services</h1>
+
+  <section class="service">
+    <img src={`${base}images/dog-grooming.png`} alt="Professional dog grooming" class="service-img" />
+    <div class="service-content">
+      <h2>Professional Grooming</h2>
+      <p>
+        Our team of skilled groomers has experience with all breeds and coat types. We offer
+        a range of grooming services to keep your pet clean, comfortable, and looking great:
+      </p>
+      <ul>
+        <li>Full grooming (bath, haircut, nail trim, ear cleaning)</li>
+        <li>Bath and brush-out</li>
+        <li>Nail trimming and grinding</li>
+        <li>Ear cleaning</li>
+        <li>De-shedding treatments</li>
+        <li>Breed-specific cuts and styling</li>
+      </ul>
+      <p>
+        Appointments are recommended. Walk-ins welcome based on availability. Give us a call
+        at <a href="tel:+17033279600">(703) 327-9600</a> to schedule your pet's next grooming session.
+      </p>
+    </div>
+  </section>
+
+  <section class="service reverse">
+    <img src={`${base}images/dog-wash.jpg`} alt="Self-service dog wash" class="service-img" />
+    <div class="service-content">
+      <h2>Self-Service Dog Wash</h2>
+      <p>
+        Our self-service dog wash is perfect for pet parents who want to bathe their dog
+        without the mess at home. Each station includes:
+      </p>
+      <ul>
+        <li>Elevated, professional-grade wash tub</li>
+        <li>Warm water with adjustable spray nozzle</li>
+        <li>Choice of shampoos and conditioners</li>
+        <li>Towels for drying</li>
+        <li>Professional blow dryers</li>
+        <li>Aprons to keep you dry</li>
+      </ul>
+      <p>
+        No appointment needed — just walk in during store hours! We handle the cleanup so
+        you can focus on pampering your pup.
+      </p>
+    </div>
+  </section>
+
+  <section class="service">
+    <img src={`${base}images/cat-shop.jpg`} alt="Pet food and supplies" class="service-img" />
+    <div class="service-content">
+      <h2>Natural Pet Food & Nutrition Guidance</h2>
+      <p>
+        We stock a wide selection of premium natural and holistic pet food brands. Our
+        staff is knowledgeable about pet nutrition and happy to help you choose the right
+        food for your pet's age, breed, size, and any dietary needs.
+      </p>
+      <p>
+        Whether you're looking for grain-free, raw, freeze-dried, or limited-ingredient
+        diets, we've got options for both dogs and cats.
+      </p>
+    </div>
+  </section>
+
+  <section class="service reverse">
+    <img src={`${base}images/happy-dog.jpg`} alt="Happy dog with supplies" class="service-img" />
+    <div class="service-content">
+      <h2>Pet Supplies</h2>
+      <p>Browse our selection of quality pet supplies including:</p>
+      <ul>
+        <li>Toys, chews, and enrichment puzzles</li>
+        <li>Leashes, collars, and harnesses</li>
+        <li>Beds and crates</li>
+        <li>Treats and dental chews</li>
+        <li>Health supplements</li>
+        <li>Grooming tools and products</li>
+      </ul>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .service {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid var(--cream-dark);
+    align-items: center;
+  }
+
+  .service:last-child {
+    border-bottom: none;
+  }
+
+  .service.reverse {
+    flex-direction: row-reverse;
+  }
+
+  .service-img {
+    width: 350px;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 10px;
+    flex-shrink: 0;
+  }
+
+  .service-content {
+    flex: 1;
+  }
+
+  .service-content ul {
+    margin: 1rem 0 1rem 1.5rem;
+    color: var(--text-light);
+  }
+
+  .service-content li {
+    margin-bottom: 0.3rem;
+  }
+
+  .service-content p {
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .service, .service.reverse {
+      flex-direction: column;
+    }
+
+    .service-img {
+      width: 100%;
+      height: 200px;
+    }
+  }
+</style>
